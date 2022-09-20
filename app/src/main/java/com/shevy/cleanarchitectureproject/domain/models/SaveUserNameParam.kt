@@ -1,4 +1,3 @@
 package com.shevy.cleanarchitectureproject.domain.models
 
-class Username {
-}
+class SaveUserNameParam(val name: String)
