@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.shevy.cleanarchitectureproject.data.repository.UserRepositoryImpl
+import com.shevy.cleanarchitectureproject.data.storage.sharedprefs.SharedPrefUserStorage
 import com.shevy.cleanarchitectureproject.databinding.ActivityMainBinding
 import com.shevy.cleanarchitectureproject.domain.models.SaveUserNameParam
 import com.shevy.cleanarchitectureproject.domain.models.UserName
+import com.shevy.cleanarchitectureproject.domain.repository.UserRepository
 import com.shevy.cleanarchitectureproject.domain.usecase.GetUserNameUseCase
 import com.shevy.cleanarchitectureproject.domain.usecase.SaveUserNameUseCase
 
@@ -14,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     //private val vm by viewModel<MainViewModel>()
 
-    private val userRepository by lazy(LazyThreadSafetyMode.NONE) { UserRepositoryImpl(context = applicationContext) }
+    private val userRepository by lazy(LazyThreadSafetyMode.NONE) {UserRepositoryImpl(userStorage = SharedPrefUserStorage(context = applicationContext))}
     private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
         GetUserNameUseCase(
             userRepository = userRepository
