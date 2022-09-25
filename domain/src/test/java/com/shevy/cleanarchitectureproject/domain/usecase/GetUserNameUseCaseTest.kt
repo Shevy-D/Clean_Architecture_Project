@@ -1,11 +1,9 @@
 package com.shevy.cleanarchitectureproject.domain.usecase
 
-import com.shevy.cleanarchitectureproject.domain.models.SaveUserNameParam
 import com.shevy.cleanarchitectureproject.domain.models.UserName
 import com.shevy.cleanarchitectureproject.domain.repository.UserRepository
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.kotlin.mock
 
