@@ -7,16 +7,6 @@ import org.junit.jupiter.api.Test
 import org.mockito.Mockito
 import org.mockito.kotlin.mock
 
-/*class TestRepository: UserRepository {
-    override fun saveName(saveParam: SaveUserNameParam): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun getName(): UserName {
-        return UserName(firstName = "test first name", lastName = "test last name")
-    }
-}*/
-
 class GetUserNameUseCaseTest {
 
     val userRepository = mock<UserRepository>()
@@ -36,13 +26,4 @@ class GetUserNameUseCaseTest {
 
         Assertions.assertEquals(expected, actual)
     }
-
-/*    @Test
-    fun test1() {
-
-        val expected = 4
-        val actual = 2 + 2
-
-        Assertions.assertEquals(expected, actual)
-    }*/
 }
